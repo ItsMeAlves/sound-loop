@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sound Loop</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h1>Sound-loop!</h1>
+
+    <div id="app">
+        <div id='loopers'>
+            <h1>Registered loopers</h1>
+            <div v-for='(looper, index) in loopers'>
+                <looper :audio='looper'></looper>
+            </div>
+        </div>
+        <div id='recorders'>
+            <h1>Registered recorders</h1>
+            <div v-for='(recorder, index) in recorders'>
+                <recorder></recorder>
+                <button v-on:click='removeRecorder(index)'>
+                    Stop recording
+                </button>
+            </div>
+        </div>
+
+        <button v-on:click='subscribeRecorder'>Record</button>
+    </div>
+
+    <script src='js/app.js'></script>
+</body>
+</html>
