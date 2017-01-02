@@ -10,8 +10,8 @@
     <div id="app">
         <div id='loopers'>
             <h1>Registered loopers</h1>
-            <div v-for='(looper, index) in loopers'>
-                <looper :audio='looper'></looper>
+            <div v-for='audio in loopers'>
+                <looper :audio='audio'></looper>
             </div>
         </div>
         <div id='recorders'>
